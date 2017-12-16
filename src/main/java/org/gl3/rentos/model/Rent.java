@@ -10,11 +10,9 @@ import java.util.Date;
 public class Rent implements Serializable {
     @Id
     @ManyToOne(targetEntity = User.class )
-    @Column(name = "user_id", table = "rent")
     private int user_id;
     @Id
     @ManyToOne(targetEntity = Car.class)
-    @Column(name = "car_id", table = "rent")
     private int car_id;
     @Column(name = "pickup_date", table = "rent")
     private Date pickup_date;
