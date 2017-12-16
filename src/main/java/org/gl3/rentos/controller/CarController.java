@@ -17,15 +17,15 @@ public class CarController {
     CarRepository carRepository;
 
     @RequestMapping(value = "/cars", method = RequestMethod.POST)
-    public void addCar(@RequestBody Tester tester)
+    public void addCar(@RequestBody Car tester)
     {
-        System.out.println(tester.getMeme() + "   " + tester.getNumber());
+        System.out.println(tester.getColor() + "   " + tester.getModel());
         carRepository.save(tester); }
 
     @RequestMapping(value = "/cars")
-    public List<Tester> aCar(Tester car)
+    public List<Car> aCar(Car car)
     {
-        List<Tester> lister = new ArrayList<>();
+        List<Car> lister = new ArrayList<>();
         carRepository.findAll().forEach(lister::add);
         return lister;
     }
