@@ -7,6 +7,22 @@
 </head>
 <body>
 
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th>#</th>
+        <th>Color</th>
+        <th>Registration</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car: ${cars}">
+        <th scope="row" th:text="${car.getId()}"></th>
+        <td th:text="${car.getColor()}"></td>
+        <td th:text="${car.getRegistration_number()}"></td>
+    </tr>
+    </tbody>
+</table>
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
