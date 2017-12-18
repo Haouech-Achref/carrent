@@ -10,18 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping(value = "/cars")
 public class CarController {
 
     @Autowired
     CarRepository carRepository;
 
-    @RequestMapping(value = "/cars", method = RequestMethod.POST)
-    public void addCar(@RequestBody Car tester)
-    {
-        System.out.println(tester.getColor() + "   " + tester.getModel());
-        carRepository.save(tester); }
+    @ModelAttribute("car")
+    public Car getCar(){
+        return new Car();
+    }
 
-    @RequestMapping(value = "/cars")
+    @RequestMapping(value = "")
     public String listCar(Car car, Model model)
     {
         List<Car> lister = new ArrayList<>();
@@ -29,6 +29,24 @@ public class CarController {
         model.addAttribute("cars",lister);
         return "cars";
     }
+
+    @RequestMapping(value = "/add")
+    public String addCar()
+    {
+        return "formCar";
+        }
+
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String saveCar(@RequestBody Car tester)
+    {
+        System.out.println("**********************************************post mta3 el add");
+       // carRepository.save(tester);
+        return "car";
+    }
+
+
+
 
 
 }
