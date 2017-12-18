@@ -9,30 +9,50 @@ import java.util.Date;
 @Table(name = "rent",schema = "rentos")
 public class Rent implements Serializable {
     @Id
-    @ManyToOne(targetEntity = User.class )
-    private int user_id;
-    @Id
-    @ManyToOne(targetEntity = Car.class)
-    private int car_id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int id;
+    @ManyToOne
+    @JoinColumn(name = "user_id",insertable = false, updatable=false)
+    private User user;
+    @ManyToOne
+    @JoinColumn(name = "car_id",insertable = false, updatable=false)
+    private Car car;
     @Column(name = "pickup_date", table = "rent")
     private Date pickup_date;
     @Column(name = "dropoff_date", table = "rent")
     private Date dropoff_date;
 
-    public int getUser_id() {
-        return user_id;
+    public Rent(int id, User user, Car car) {
+        this.id = id;
+        this.user = user;
+        this.car = car;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public Rent() {
     }
 
-    public int getCar_id() {
-        return car_id;
+    public int getId() {
+        return id;
     }
 
-    public void setCar_id(int car_id) {
-        this.car_id = car_id;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     public Date getPickup_date() {

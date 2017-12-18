@@ -9,7 +9,7 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private int user_id;
     @Column(name = "fname", table = "utilisateur")
     private String fname;
     @Column(name = "lname", table = "utilisateur")
@@ -24,12 +24,12 @@ public class User implements Serializable {
     private String password;
 
 
-    public int getId() {
-        return id;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUser_id(int id) {
+        this.user_id = id;
     }
 
     public String getFname() {

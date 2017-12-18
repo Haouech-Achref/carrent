@@ -10,7 +10,7 @@ public class Car implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private int car_id;
     @Column(name = "registration_number", table = "car")
     private String registration_number;
     @Column(name = "manufacturer", table = "car")
@@ -31,12 +31,12 @@ public class Car implements Serializable{
     private String picture;
 
 
-    public int getId() {
-        return id;
+    public int getCar_id() {
+        return car_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCar_id(int id) {
+        this.car_id = id;
     }
 
     public String getRegistration_number() {
