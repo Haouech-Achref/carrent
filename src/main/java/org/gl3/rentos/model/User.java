@@ -4,23 +4,23 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "user", schema = "rentos")
+@Table(name = "utilisateur", schema = "rentos")
 public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
-    @Column(name = "fname", table = "user")
+    @Column(name = "fname", table = "utilisateur")
     private String fname;
-    @Column(name = "lname", table = "user")
+    @Column(name = "lname", table = "utilisateur")
     private String lname;
-    @Column(name = "email", table = "user")
+    @Column(name = "email", table = "utilisateur")
     private String email;
-    @Column(name = "telephone", table = "user")
+    @Column(name = "telephone", table = "utilisateur")
     private int telephone;
-    @Column(name = "role", table = "user")
+    @Column(name = "role", table = "utilisateur")
     private String role;
-    @Column(name = "password", table = "user")
+    @Column(name = "password", table = "utilisateur")
     private String password;
 
 
