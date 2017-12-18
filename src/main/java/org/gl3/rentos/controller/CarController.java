@@ -38,11 +38,10 @@ public class CarController {
 
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String saveCar(@RequestBody Car tester)
+    public String saveCar(Car tester)
     {
-        System.out.println("**********************************************post mta3 el add");
-       // carRepository.save(tester);
-        return "cars";
+       carRepository.save(tester);
+        return "redirect:cars";
     }
 
 
