@@ -37,12 +37,12 @@ public class CarController {
         }
 
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "", method = RequestMethod.POST)
     public String saveCar(@RequestBody Car tester)
     {
         System.out.println("**********************************************post mta3 el add");
        // carRepository.save(tester);
-        return "car";
+        return "cars";
     }
 
 
