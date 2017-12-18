@@ -30,6 +30,7 @@ public class Car implements Serializable{
     @Column(name = "picture", table = "car")
     private String picture;
 
+
     public int getId() {
         return id;
     }

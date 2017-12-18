@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Add User</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+</head>
+<body>
+
+    <form action="#" th:action="@{/signUp}" th:object="${user}" method="post">
+        <div class="form-group"  >
+            <label for="email">Email</label>
+            <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Email"/>
+        </div>
+
+
+    <button style="margin-top:10px" class="btn btn-default" type="submit">Submit</button>
+
+
+</form>
+</body>
+</html>

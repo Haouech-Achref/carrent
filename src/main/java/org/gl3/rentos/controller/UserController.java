@@ -1,15 +1,45 @@
 package org.gl3.rentos.controller;
+import org.gl3.rentos.model.User;
 
 
+import org.gl3.rentos.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import java.util.ArrayList;
+import java.util.List;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
 
-    @RequestMapping("/")
-    public String index()
-    {
+    @Autowired
+    UserRepository userRepository;
+
+    @ModelAttribute("user")
+     public User getUser(){
+            return new User();
+
+    }
+
+    @RequestMapping("")
+    public String home(){
         return "index";
+    }
+
+    @RequestMapping("/signUp")
+    public String signUp()
+    {
+        return "formSignUp";
+    }
+
+    @RequestMapping(value = "/signUp", method = RequestMethod.POST)
+    public String saveCar(User tester)
+    {
+       userRepository.save(tester);
+        System.out.println(tester.getFname());
+        return "redirect:cars";
     }
 }
