@@ -26,22 +26,20 @@ public class UserController {
         return "home";
     }
 
-    @RequestMapping("/signUp")
+    @RequestMapping("/signup")
     public String signUp()
     {
         return "formSignUp";
     }
 
-    @RequestMapping(value = "/signUp", method = RequestMethod.POST)
-    public String saveCar(User tester)
-    {  User userDB =  userRepository.findByEmail(tester.getEmail());
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
+    public String addUser(User user)
+    {  User userDB =  userRepository.findByEmail(user.getEmail());
 
+    user.setRole("USER");
     if (userDB == null)
         System.out.println("Email n'existe pas aaa");
-
-
-       //userRepository.save(tester);
-
+        userRepository.save(user);
         return "redirect:cars";
     }
 }

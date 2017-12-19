@@ -9,7 +9,7 @@
 <body>
 
 
-<form action="#" th:action="@{/cars}" th:object="${car}" method="post">
+<form action="#" th:action="@{/cars}"  th:object="${car}">
     <div class="form-group"  >
         <label for="model">Model</label>
         <input type="text" th:field="*{model}" class="form-control" id="model" placeholder="model"/>
@@ -22,7 +22,7 @@
 
     <div class="form-group"  >
         <label for="registration_number">Registration_number</label>
-        <input type="number" th:field="*{registration_number}" class="form-control" id="registration_number" placeholder="registartion_number"/>
+        <input type="text" th:field="*{registration_number}" class="form-control" id="registration_number" placeholder="registartion_number"/>
     </div>
 
     <div class="form-group"  >
@@ -46,10 +46,8 @@
     </div>
 
     <div class="form-group" >
-
-
         <label >Available</label>
-        <input type="checkbox" name="isAvailable" value="true"  th:checked="${true}"/>
+        <input type="checkbox" name="isAvailable"  th:checked="${true}"/>
 
     </div>
 

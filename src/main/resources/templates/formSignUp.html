@@ -111,7 +111,7 @@
 <body>
 
 
-<form action="#" th:action="@{/signUp}" th:object="${user}" method="post">
+<form action="#" th:action="@{/signup}" th:object="${user}" method="post">
     <h2>Sign Up</h2>
 
     <p>
@@ -127,11 +127,6 @@
     <p>
         <label for="email" class="floatLabel">Email</label>
         <input type="text" th:field="*{email}" class="form-control" id="email" />
-    </p>
-
-    <p>
-        <label for="role" class="floatLabel">Role</label>
-        <input type="text" th:field="*{role}" class="form-control" id="role" />
     </p>
 
     <p>
