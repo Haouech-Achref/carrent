@@ -38,7 +38,7 @@ public class CarController {
 
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String saveCar(Car tester)
+    public String saveCar(@RequestBody Car tester)
     {
        carRepository.save(tester);
         return "redirect:cars";

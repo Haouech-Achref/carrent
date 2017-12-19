@@ -25,7 +25,7 @@ public class Car implements Serializable{
     private int power;
     @Column(name = "price", table = "car")
     private int price;
-    @Column(name = "isAvailable", table = "car")
+    @Column(name = "is_available", table = "car")
     private boolean isAvailable;
     @Column(name = "picture", table = "car")
     private String picture;
