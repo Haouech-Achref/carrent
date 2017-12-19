@@ -23,7 +23,6 @@ public class User implements Serializable {
     @Column(name = "password", table = "utilisateur")
     private String password;
 
-
     public int getId() {
         return id;
     }
@@ -78,5 +77,18 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", fname='" + fname + '\'' +
+                ", lname='" + lname + '\'' +
+                ", email='" + email + '\'' +
+                ", telephone=" + telephone +
+                ", role='" + role + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

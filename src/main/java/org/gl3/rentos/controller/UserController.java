@@ -7,9 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import java.util.ArrayList;
-import java.util.List;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -26,7 +23,7 @@ public class UserController {
 
     @RequestMapping("")
     public String home(){
-        return "index";
+        return "home";
     }
 
     @RequestMapping("/signUp")
@@ -37,9 +34,14 @@ public class UserController {
 
     @RequestMapping(value = "/signUp", method = RequestMethod.POST)
     public String saveCar(User tester)
-    {
-       userRepository.save(tester);
-        System.out.println(tester.getFname());
+    {  User userDB =  userRepository.findByEmail(tester.getEmail());
+
+    if (userDB == null)
+        System.out.println("Email n'existe pas aaa");
+
+
+       //userRepository.save(tester);
+
         return "redirect:cars";
     }
 }
