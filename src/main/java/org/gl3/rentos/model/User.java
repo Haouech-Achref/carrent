@@ -23,14 +23,12 @@ public class User implements Serializable {
     @Column(name = "password", table = "utilisateur")
     private String password;
 
-<<<<<<< HEAD
-    public int getId() {
-        return id;
-=======
+
+
 
     public int getUser_id() {
         return user_id;
->>>>>>> 54d549e063f1d786047ca7dad0131a7303017c89
+
     }
 
     public void setUser_id(int id) {

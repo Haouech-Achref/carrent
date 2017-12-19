@@ -12,10 +12,10 @@ public class Rent implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     @ManyToOne
-    @JoinColumn(name = "user_id",insertable = false, updatable=false)
+    @JoinColumn(name = "user_id")
     private User user;
     @ManyToOne
-    @JoinColumn(name = "car_id",insertable = false, updatable=false)
+    @JoinColumn(name = "car_id")
     private Car car;
     @Column(name = "pickup_date", table = "rent")
     private Date pickup_date;
