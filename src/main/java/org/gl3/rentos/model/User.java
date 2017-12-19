@@ -9,7 +9,7 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    private int user_id;
     @Column(name = "fname", table = "utilisateur")
     private String fname;
     @Column(name = "lname", table = "utilisateur")
@@ -23,12 +23,18 @@ public class User implements Serializable {
     @Column(name = "password", table = "utilisateur")
     private String password;
 
+<<<<<<< HEAD
     public int getId() {
         return id;
+=======
+
+    public int getUser_id() {
+        return user_id;
+>>>>>>> 54d549e063f1d786047ca7dad0131a7303017c89
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUser_id(int id) {
+        this.user_id = id;
     }
 
     public String getFname() {
@@ -79,16 +85,5 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", fname='" + fname + '\'' +
-                ", lname='" + lname + '\'' +
-                ", email='" + email + '\'' +
-                ", telephone=" + telephone +
-                ", role='" + role + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
+   
 }
