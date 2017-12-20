@@ -25,6 +25,7 @@ public class RentController {
 
     @ModelAttribute("rent")
     public Rent getRent(){
+
         return new Rent();
 
     }
@@ -53,7 +54,7 @@ public class RentController {
         ArrayList<Car> availableCars = new ArrayList<>();
         carRepository.findAll().forEach(availableCars::add);
         availableCars.removeAll(unavailableCars);
-
         availableCars.forEach(car -> System.out.println("available: " + car.getCar_id()));
-        return "home";}
+        return "home";
+    }
 }

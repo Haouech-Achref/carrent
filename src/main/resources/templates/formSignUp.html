@@ -112,9 +112,11 @@
 
 
 <form action="#" th:action="@{/signup}" th:object="${user}" method="post">
+    <input type="text" th:field="*{user_id}" style="display: none"/>
     <h2>Sign Up</h2>
 
     <p>
+
         <label for="fname" class="floatLabel">First Name</label>
         <input type="text" th:field="*{fname}" class="form-control" id="fname" />
     </p>

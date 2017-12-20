@@ -68,7 +68,7 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public int getTelephone() {
+    public Integer getTelephone() {
         return telephone;
     }
 

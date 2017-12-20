@@ -5,6 +5,7 @@ import org.gl3.rentos.model.User;
 import org.gl3.rentos.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +32,15 @@ public class UserController {
     {
         return "formSignUp";
     }
+
+    @RequestMapping("/users/{id}")
+    public String editUser(@PathVariable int id, Model model)
+    {
+        User user = userRepository.findOne(id);
+        model.addAttribute("user",user);
+        return "formSignUp";
+    }
+
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String addUser(User user)
