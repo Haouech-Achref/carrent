@@ -1,6 +1,8 @@
 package org.gl3.rentos.model;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -17,10 +19,12 @@ public class Rent implements Serializable {
     @ManyToOne
     @JoinColumn(name = "car_id")
     private Car car;
-    @Column(name = "pickup_date", table = "rent")
-    private Date pickup_date;
-    @Column(name = "dropoff_date", table = "rent")
-    private Date dropoff_date;
+    @Column(name = "pickup", table = "rent")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date pickup;
+    @Column(name = "dropoff", table = "rent")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dropoff;
 
     public Rent(int id, User user, Car car) {
         this.id = id;
@@ -55,19 +59,19 @@ public class Rent implements Serializable {
         this.car = car;
     }
 
-    public Date getPickup_date() {
-        return pickup_date;
+    public Date getPickup() {
+        return pickup;
     }
 
-    public void setPickup_date(Date pickup_date) {
-        this.pickup_date = pickup_date;
+    public void setPickup(Date pickup_date) {
+        this.pickup = pickup_date;
     }
 
-    public Date getDropoff_date() {
-        return dropoff_date;
+    public Date getDropoff() {
+        return dropoff;
     }
 
-    public void setDropoff_date(Date dropoff_date) {
-        this.dropoff_date = dropoff_date;
+    public void setDropoff(Date dropoff_date) {
+        this.dropoff = dropoff_date;
     }
 }

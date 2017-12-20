@@ -23,7 +23,7 @@ public class UserController {
 
     @RequestMapping("")
     public String home(){
-        return "home";
+        return "signin";
     }
 
     @RequestMapping("/signup")

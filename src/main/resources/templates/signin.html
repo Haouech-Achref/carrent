@@ -117,25 +117,27 @@
 <body>
 
 
-<form action="#" th:action="@{/availablecars}" th:object="${rent}" method="post">
+<form action="#" th:action="@{/signUp}" th:object="${user}" method="post">
     <h2>Welcome back</h2>
 
     <p>
-        <label for="email" class="floatLabel">Pickup date</label>
-        <input type="date" th:field="*{pickup}" class="form-control" id="email" />
+        <label for="email" class="floatLabel">Email</label>
+        <input type="text" th:field="*{email}" class="form-control" id="email" />
     </p>
 
     <p>
-        <label for="drop" class="floatLabel">Dropoff date</label>
-        <input type="date" th:field="*{dropoff}" class="form-control" id="drop" />
+        <label for="password" class="floatLabel">Password</label>
+        <input type="password" th:field="*{password}" class="form-control" id="password" />
+        <span>Forgot Password ? YFZ </span>
     </p>
 
     <p>
-        <button  style="margin-left:25%;" name="submit" id="submit" type="submit" class="sub">Search available cars</button>
+        <button  style="margin-left:25%;" name="submit" id="submit" type="submit" class="sub">Create My Account</button>
     </p>
 
 
     <p>
+    Click here to continue without sign in <a th:href="@{/cars}">here</a>
 </p>
 </form>
 </body>

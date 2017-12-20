@@ -18,6 +18,12 @@ public class RentController {
     @Autowired
     RentRepository rentRepository;
 
+    @ModelAttribute("rent")
+    public Rent getRent(){
+        return new Rent();
+
+    }
+
     @RequestMapping("/rent")
     public String rent(@RequestBody Rent rent, Model model)
     {
@@ -25,6 +31,13 @@ public class RentController {
         rentRepository.save(rent);
         return "rent";
     }
+    @RequestMapping(value = "/home")
+    public String searchAvailable()
+    {return "home";}
 
-
+    @RequestMapping(value = "/availablecars", method = RequestMethod.POST)
+    public String searchAvailable(Rent rent)
+    {
+        System.out.println(rent.getDropoff()+ "   blyat   "+ rent.getPickup());
+        return "home";}
 }
