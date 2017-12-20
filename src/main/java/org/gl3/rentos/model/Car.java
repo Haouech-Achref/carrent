@@ -31,6 +31,21 @@ public class Car implements Serializable{
     private String picture;
 
 
+    public Car() {
+    }
+
+    public Car(String registration_number, String manufacturer, String model, int mileage, String color, int power, int price, boolean isAvailable, String picture) {
+        this.registration_number = registration_number;
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.mileage = mileage;
+        this.color = color;
+        this.power = power;
+        this.price = price;
+        this.isAvailable = isAvailable;
+        this.picture = picture;
+    }
+
     public int getCar_id() {
         return car_id;
     }

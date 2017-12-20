@@ -6,5 +6,5 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public interface RentRepository extends CrudRepository<Rent,Integer> {
-    public ArrayList<Rent> findAllByPickupBetweenAndDropoffBetween(Date pickupbegin, Date pickupend, Date dropoffbegin, Date dropoffend );
+    public ArrayList<Rent> findAllByPickupBetweenOrDropoffBetween(Date pickupbegin, Date pickupend, Date dropoffbegin, Date dropoffend );
 }

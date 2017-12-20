@@ -44,7 +44,12 @@ public class CarController {
         return "redirect:cars";
     }
 
-
+    @RequestMapping(value = "/{id}")
+    public String editCarInfo(@PathVariable int id, Model model)
+    {
+        Car car = carRepository.findOne(id);
+        model.addAttribute("car",car);
+        return "formCar";   }
 
 
 

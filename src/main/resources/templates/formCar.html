@@ -108,6 +108,8 @@
 
 <form action="#" th:action="@{/cars}"  th:object="${car}" method="post">
     <div class="form-group"  >
+
+        <input type="text" th:field="*{car_id}" class="form-control" th:hidden="true"/>
         <label for="model">Model</label>
         <input type="text" th:field="*{model}" class="form-control" id="model" placeholder="model"/>
     </div>

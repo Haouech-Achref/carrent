@@ -17,14 +17,23 @@ public class User implements Serializable {
     @Column(name = "email", table = "utilisateur")
     private String email;
     @Column(name = "telephone", table = "utilisateur")
-    private int telephone;
+    private Integer telephone;
     @Column(name = "role", table = "utilisateur")
     private String role;
     @Column(name = "password", table = "utilisateur")
     private String password;
 
+    public User() {
+    }
 
-
+    public User(String fname, String lname, String email, int telephone, String role, String password) {
+        this.fname = fname;
+        this.lname = lname;
+        this.email = email;
+        this.telephone = telephone;
+        this.role = role;
+        this.password = password;
+    }
 
     public int getUser_id() {
         return user_id;
