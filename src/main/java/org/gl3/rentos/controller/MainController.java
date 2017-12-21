@@ -1,17 +1,20 @@
 package org.gl3.rentos.controller;
 
-
-import com.sun.deploy.net.HttpRequest;
-import com.sun.deploy.net.HttpResponse;
+import org.gl3.rentos.model.Rent;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class MainController {
 
-    @RequestMapping(value = "/")
+    @ModelAttribute("rent")
+    public Rent getRent(){
 
+        return new Rent();
+
+    }
+    @RequestMapping(value = "/")
     public String home()
     {
          return "home";
