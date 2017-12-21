@@ -32,8 +32,8 @@ public class UserController {
     }
 
     @RequestMapping("/signin")
-    public String signin(Model model){
-
+    public String signin(Model model,HttpSession session){
+        session.removeAttribute("sessionRole");
         model.addAttribute("message",validEmailSignIn);
         return "signin";
     }

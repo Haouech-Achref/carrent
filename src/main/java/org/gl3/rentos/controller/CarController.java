@@ -23,6 +23,8 @@ import java.util.List;
 @RequestMapping(value = "/cars")
 public class CarController {
 
+
+
     private static String UPLOADED_FOLDER = "src/main/resources/static/img/";
     @Autowired
     CarRepository carRepository;
@@ -32,26 +34,33 @@ public class CarController {
         return new Car();
     }
 
+
     @RequestMapping(value = "")
-    public String listCar(Car car, Model model)
+    public String listCar(Car car, Model model,HttpSession session)
     {
-        List<Car> lister = new ArrayList<>();
+
+        System.out.println(session.getAttribute("sessionRole"));
+        if (session.getAttribute("sessionRole").equals("admin"))
+        { List<Car> lister = new ArrayList<>();
         carRepository.findAll().forEach(lister::add);
         model.addAttribute("cars",lister);
-        return "cars";
+        return "cars";}
+        System.out.println("U dont have access to this page ");
+        return "redirect:signin";
     }
 
     @RequestMapping(value = "/add")
-    public String addCar()
+    public String addCar(HttpSession session)
     {
+        System.out.println(session.getAttribute("sessionRole"));
         return "formCar";
     }
 
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String saveCar(Car tester,         @RequestParam("file") MultipartFile file,
+    public String saveCar(HttpSession session ,Car tester,         @RequestParam("file") MultipartFile file,
                           RedirectAttributes redirectAttributes)
-    {
+    {System.out.println(session.getAttribute("sessionRole"));
 
         if (file.isEmpty()) {
             tester.setPicture("alt.png");
@@ -82,8 +91,8 @@ public class CarController {
     }
 
     @RequestMapping(value = "/{id}")
-    public String editCarInfo(@PathVariable int id, Model model)
-    {
+    public String editCarInfo(@PathVariable int id, Model model,HttpSession session)
+    {   System.out.println(session.getAttribute("sessionRole"));
         Car car = carRepository.findOne(id);
         model.addAttribute("car",car);
         return "formCar";   }
