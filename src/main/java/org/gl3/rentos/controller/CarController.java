@@ -43,7 +43,7 @@ public class CarController {
     {
 
         System.out.println(session.getAttribute("sessionRole"));
-        if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("admin"))
+        if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("ADMIN"))
         { List<Car> lister = new ArrayList<>();
         carRepository.findAll().forEach(lister::add);
         model.addAttribute("cars",lister);
@@ -55,8 +55,15 @@ public class CarController {
     @RequestMapping(value = "/add")
     public String addCar(HttpSession session)
     {
-        System.out.println(session.getAttribute("sessionRole"));
-        return "formCar";
+        if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("ADMIN"))
+        {
+            return "formCar";
+
+        }
+        else {
+
+            return "accessdenied";
+        }
     }
 
 

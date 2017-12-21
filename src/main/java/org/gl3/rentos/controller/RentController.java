@@ -37,11 +37,6 @@ public class RentController {
         rentRepository.save(rent);
         return "rent";
     }
-    @RequestMapping(value = "/home")
-    public String searchAvailable()
-    {
-        return "home";
-    }
 
     @RequestMapping(value = "/availablecars", method = RequestMethod.POST)
     public String searchAvailable(Rent rent)
