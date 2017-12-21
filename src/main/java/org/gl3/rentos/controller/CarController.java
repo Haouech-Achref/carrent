@@ -1,14 +1,17 @@
 package org.gl3.rentos.controller;
 
+import com.sun.deploy.net.HttpResponse;
 import org.gl3.rentos.model.Car;
 import org.gl3.rentos.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,7 +23,7 @@ import java.util.List;
 @RequestMapping(value = "/cars")
 public class CarController {
 
-    private static String UPLOADED_FOLDER = "src/main/resources/static/";
+    private static String UPLOADED_FOLDER = "src/main/resources/static/img/";
     @Autowired
     CarRepository carRepository;
 
@@ -50,10 +53,10 @@ public class CarController {
                           RedirectAttributes redirectAttributes)
     {
 
-
         if (file.isEmpty()) {
-            redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
-            return "redirect:cars/add";
+            tester.setPicture("alt.png");
+            carRepository.save(tester);
+            return "redirect:cars";
         }
 
         try {
@@ -69,6 +72,9 @@ public class CarController {
 
         } catch (IOException e) {
             e.printStackTrace();
+            tester.setPicture("alt.png");
+            carRepository.save(tester);
+            return "redirect:cars";
         }
 
        carRepository.save(tester);
