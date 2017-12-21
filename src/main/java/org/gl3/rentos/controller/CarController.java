@@ -20,7 +20,7 @@ import java.util.List;
 @RequestMapping(value = "/cars")
 public class CarController {
 
-    private static String UPLOADED_FOLDER = "images";
+    private static String UPLOADED_FOLDER = "src/main/resources/static/";
     @Autowired
     CarRepository carRepository;
 
@@ -62,7 +62,7 @@ public class CarController {
             byte[] bytes = file.getBytes();
             Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
             Files.write(path, bytes);
-            tester.setPicture(path.toString());
+            tester.setPicture(file.getOriginalFilename());
 
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
