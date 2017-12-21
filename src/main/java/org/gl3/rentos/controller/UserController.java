@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
+    private  String validEmailSignUp="Sign Up ";
+    private  String validEmailSignIn="Welcome back";
 
     @Autowired
     UserRepository userRepository;
@@ -22,16 +24,46 @@ public class UserController {
 
     }
 
-    @RequestMapping("")
-    public String home(){
+    @RequestMapping("/signin")
+    public String signin(Model model){
+
+        model.addAttribute("message",validEmailSignIn);
         return "signin";
     }
 
-    @RequestMapping("/signup")
-    public String signUp()
+
+    @RequestMapping(value = "/signin", method = RequestMethod.POST)
+    public String validSignIn(User user , Model model)
     {
-        return "formSignUp";
+
+        User userDB =  userRepository.findByEmail(user.getEmail());
+
+        if (userDB == null)
+            {System.out.println("*********** INvalid Email");
+                validEmailSignIn="Error ..  User does not exist";
+                model.addAttribute("message",validEmailSignIn);
+            return "redirect:signin";
+            }
+
+        else   if ((userDB.getEmail().equals(user.getEmail()))&& (userDB.getPassword().equals(user.getPassword()))  )
+        {System.out.println("*********** Valid USER");
+        return "redirect:cars";}
+
+         else if (!(userDB.getPassword().equals(user.getPassword())))
+        { System.out.println("*********** Invalid PASSWORD ya khra333");
+            validEmailSignIn="Incorrect password. Please try Again.";
+            model.addAttribute("message",validEmailSignIn);
+
+        return "redirect:signin";}
+
+
+
+        return "redirect:signin" ;
+
+
     }
+
+
 
     @RequestMapping("/users/{id}")
     public String editUser(@PathVariable int id, Model model)
@@ -41,15 +73,26 @@ public class UserController {
         return "formSignUp";
     }
 
+    @RequestMapping("/signup")
+    public String signUp(Model model)
+    {
+        model.addAttribute("message",validEmailSignUp);
+        return "formSignUp";
+    }
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
-    public String addUser(User user)
+    public String addUser(User user,  Model model)
     {  User userDB =  userRepository.findByEmail(user.getEmail());
-
     user.setRole("USER");
-    if (userDB == null)
-        System.out.println("Email n'existe pas aaa");
-        userRepository.save(user);
+    if (!(userDB == null))
+        { System.out.println("Email already in use");
+         validEmailSignUp="Error.. Email already in use";
+         model.addAttribute("message",validEmailSignUp);
+        return "redirect:signup" ;}
+
+
+         userRepository.save(user);
+        validEmailSignUp="Sign Up ";
         return "redirect:cars";
     }
 }

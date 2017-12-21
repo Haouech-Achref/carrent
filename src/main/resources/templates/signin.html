@@ -117,28 +117,89 @@
 <body>
 
 
-<form action="#" th:action="@{/signUp}" th:object="${user}" method="post">
-    <h2>Welcome back</h2>
+<form action="#" th:action="@{/signin}" th:object="${user}" method="post">
+    <h2 th:text="|${message}|">Welcome back </h2>
+
 
     <p>
         <label for="email" class="floatLabel">Email</label>
         <input type="text" th:field="*{email}" class="form-control" id="email" />
+        <span>Enter email</span>
+
     </p>
 
     <p>
         <label for="password" class="floatLabel">Password</label>
         <input type="password" th:field="*{password}" class="form-control" id="password" />
-        <span>Forgot Password ? YFZ </span>
+        <span>Enter a password longer than 8 characters</span>
     </p>
 
     <p>
-        <button  style="margin-left:25%;" name="submit" id="submit" type="submit" class="sub">Create My Account</button>
+        <button  style="margin-left:25%;" name="submit" id="submit" type="submit" class="sub">Sign In</button>
     </p>
 
 
     <p>
-    Click here to continue without sign in <a th:href="@{/cars}">here</a>
+    Click here to continue without sign in <a th:href="@{/home}">here</a>
 </p>
 </form>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+<script>
+    $("form span").hide();
+
+    var $password = $("#password");
+    var $email = $("#email");
+
+    function isPasswordValid() {
+        return $password.val().length > 8;
+    }
+
+    function isEmailValid() {
+        return $email.val().length > 0;
+    }
+
+    function arePasswordsMatching() {
+        return $password.val() === $password.val();
+    }
+
+    function passwordEvent(){
+        //Find out if password is valid
+        if(isPasswordValid()) {
+            //Hide hint if valid
+            $password.next().hide();
+        } else {
+            //else show hint
+            $password.next().show();
+        }
+    }
+    function emailEvent() {
+        //Find out if password and confirmation match
+        if(isEmailValid()) {
+            //Hide hint if match
+            $email.next().hide();
+        } else {
+            //else show hint
+            $email.next().show();
+        }
+    }
+    function canSubmit() {
+        return !(!isPasswordValid() || !isEmailValid());
+    }
+
+    function enableSubmitEvent() {
+        $("#submit").prop("disabled", !canSubmit());
+    }
+
+    //When event happens on password input
+    $password.focus(passwordEvent).keyup(passwordEvent).keyup(emailEvent).keyup(enableSubmitEvent);
+
+    //When event happens on confirmation input
+    $email.focus(emailEvent).keyup(emailEvent).keyup(enableSubmitEvent);
+
+    enableSubmitEvent();
+
+</script>
+
 </body>
 </html>

@@ -113,7 +113,12 @@
 
 <form action="#" th:action="@{/signup}" th:object="${user}" method="post">
     <input type="text" th:field="*{user_id}" style="display: none"/>
-    <h2>Sign Up</h2>
+
+    <h2 th:text="|${message}|">Sign Up </h2>
+
+
+
+
 
     <p>
 
@@ -146,6 +151,7 @@
         <label for="confirm_password1" class="floatLabel">Confirm Password</label>
         <input type="password"  class="form-control" id="confirm_password1" />
         <span>Your passwords do not match</span>
+
     </p>
 
 
@@ -153,6 +159,7 @@
 <p>
     <button  style="margin-left:25%;" name="submit" id="submit" type="submit" class="sub">Create My Account</button>
 </p>
+
 
 
 </form>
