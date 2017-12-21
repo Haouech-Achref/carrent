@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -16,9 +18,13 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 @Controller
 @RequestMapping(value = "/cars")
 public class CarController {
+
+    private HttpServletRequest request ;
 
     private static String UPLOADED_FOLDER = "images";
     @Autowired
@@ -39,8 +45,9 @@ public class CarController {
     }
 
     @RequestMapping(value = "/add")
-    public String addCar()
+    public String addCar( HttpSession session)
     {
+
         return "formCar";
         }
 

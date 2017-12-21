@@ -10,10 +10,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+
 @Controller
+
+
 public class UserController {
     private  String validEmailSignUp="Sign Up ";
     private  String validEmailSignIn="Welcome back";
+
 
     @Autowired
     UserRepository userRepository;
@@ -33,7 +40,7 @@ public class UserController {
 
 
     @RequestMapping(value = "/signin", method = RequestMethod.POST)
-    public String validSignIn(User user , Model model)
+    public String validSignIn(User user , Model model , HttpSession session)
     {
 
         User userDB =  userRepository.findByEmail(user.getEmail());
@@ -47,6 +54,12 @@ public class UserController {
 
         else   if ((userDB.getEmail().equals(user.getEmail()))&& (userDB.getPassword().equals(user.getPassword()))  )
         {System.out.println("*********** Valid USER");
+
+
+         session.setAttribute("sessionRole",userDB.getRole());
+
+
+
         return "redirect:cars";}
 
          else if (!(userDB.getPassword().equals(user.getPassword())))
