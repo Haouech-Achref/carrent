@@ -1,15 +1,16 @@
 package org.gl3.rentos.controller;
 
+import com.sun.deploy.net.HttpResponse;
 import org.gl3.rentos.model.Car;
 import org.gl3.rentos.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,15 +19,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 @Controller
 @RequestMapping(value = "/cars")
 public class CarController {
 
-    private HttpServletRequest request ;
-
-    private static String UPLOADED_FOLDER = "images";
+    private static String UPLOADED_FOLDER = "src/main/resources/static/img/";
     @Autowired
     CarRepository carRepository;
 
@@ -45,11 +42,10 @@ public class CarController {
     }
 
     @RequestMapping(value = "/add")
-    public String addCar( HttpSession session)
+    public String addCar()
     {
-
         return "formCar";
-        }
+    }
 
 
     @RequestMapping(value = "", method = RequestMethod.POST)
@@ -57,10 +53,10 @@ public class CarController {
                           RedirectAttributes redirectAttributes)
     {
 
-
         if (file.isEmpty()) {
-            redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
-            return "redirect:cars/add";
+            tester.setPicture("alt.png");
+            carRepository.save(tester);
+            return "redirect:cars";
         }
 
         try {
@@ -69,16 +65,19 @@ public class CarController {
             byte[] bytes = file.getBytes();
             Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
             Files.write(path, bytes);
-            tester.setPicture(path.toString());
+            tester.setPicture(file.getOriginalFilename());
 
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
 
         } catch (IOException e) {
             e.printStackTrace();
+            tester.setPicture("alt.png");
+            carRepository.save(tester);
+            return "redirect:cars";
         }
 
-       carRepository.save(tester);
+        carRepository.save(tester);
         return "redirect:cars";
     }
 
