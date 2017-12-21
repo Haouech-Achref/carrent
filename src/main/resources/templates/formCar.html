@@ -106,7 +106,7 @@
 <body>
 
 
-<form action="#" th:action="@{/cars}"  th:object="${car}" method="post">
+<form action="#" enctype="multipart/form-data" th:action="@{/cars}"  th:object="${car}" method="post">
     <div class="form-group"  >
 
         <input type="text" th:field="*{car_id}" class="form-control" th:hidden="true"/>
@@ -150,6 +150,7 @@
 
     </div>
 
+    <input type="file" name="file"/><br/><br/>
 
     <button style="margin-top:10px" class="btn btn-default" type="submit">Submit</button>
     <button style="margin-top:10px" class="btn btn-default" type="reset">Reset</button>
