@@ -71,7 +71,7 @@ public class UserController {
 
 
 
-        return "redirect:signin" ;
+        return "redirect:signin";
 
 
     }

@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.constraints.Null;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -31,7 +32,9 @@ public class CarController {
 
     @ModelAttribute("car")
     public Car getCar(){
-        return new Car();
+        Car car = new Car();
+        car.setPicture("alt.png");
+        return car;
     }
 
 
@@ -40,7 +43,7 @@ public class CarController {
     {
 
         System.out.println(session.getAttribute("sessionRole"));
-        if (session.getAttribute("sessionRole").equals("admin"))
+        if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("admin"))
         { List<Car> lister = new ArrayList<>();
         carRepository.findAll().forEach(lister::add);
         model.addAttribute("cars",lister);
