@@ -5,77 +5,105 @@
     <title>Add Car</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-neon-glow.css}"/>
     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-neon-glow.min.css}"/>
-    <style>
-        img{
-            max-width:450px;
-            max-height:450px;
-        }
-    </style>
+
 </head>
 <body>
 
-
-<div class="card">
-    <img class="card-img-top"  th:src="@{|/img/${car.picture}|}"/>
-    <div class="card-body">
-        <form action="#" enctype="multipart/form-data" th:action="@{/cars}" th:object="${car}" method="post">
-
-            <img/>
-            <div class="form-group">
+<div class="container">
+    <div class="card" style="padding: 25px; margin: 25px">
+        <img class="card-img-top" th:src="@{|/img/${car.picture}|}"/>
+        <div class="card-body">
+            <form action="#" enctype="multipart/form-data" th:action="@{/cars}" th:object="${car}" method="post">
 
                 <input type="text" th:field="*{car_id}" class="form-control" th:hidden="true"/>
-                <label for="model">Model</label>
-                <input type="text" th:field="*{model}" class="form-control" id="model"/>
-            </div>
+                <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">Model</button>
+                  </span>
+                    <input type="text" th:field="*{model}" class="form-control" id="model"/>
+                </div>
+                </div>
 
-            <div class="form-group">
-                <label for="color">Color</label>
-                <input type="text" th:field="*{color}" class="form-control" id="color"/>
-            </div>
+                <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">Color</button>
+                  </span>
+                    <input type="text" th:field="*{color}" class="form-control" id="color"/>
+                </div>
+                </div>
 
-            <div class="form-group">
-                <label for="registration_number">Registration_number</label>
-                <input type="text" th:field="*{registration_number}" class="form-control" id="registration_number"/>
-            </div>
+                <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">Registration number</button>
+                  </span>
+                    <input type="text" th:field="*{registration_number}" class="form-control" id="registration_number"/>
+                </div>
+                </div>
 
-            <div class="form-group">
-                <label for="power">Power</label>
-                <input type="number" th:field="*{power}" class="form-control" id="power"/>
-            </div>
+                <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">Horsepower</button>
+                  </span>
+                    <input type="number" th:field="*{power}" class="form-control" id="power"/>
+                </div>
+                </div>
 
-            <div class="form-group">
-                <label for="price">Price</label>
-                <input type="number" th:field="*{price}" class="form-control" id="price"/>
-            </div>
+                <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">Price per day</button>
+                  </span>
+                    <input type="number" th:field="*{price}" class="form-control" id="price"/>
+                </div>
+                </div>
 
-            <div class="form-group">
-                <label for="manufacturer">Manufacturer</label>
-                <input type="text" th:field="*{manufacturer}" class="form-control" id="manufacturer"/>
-            </div>
+                <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">Manufacturer</button>
+                  </span>
+                    <input type="text" th:field="*{manufacturer}" class="form-control" id="manufacturer"/>
+                </div>
+                </div>
 
-            <div class="form-group">
-                <label for="mileage">Mileage</label>
-                <input type="number" th:field="*{mileage}" class="form-control" id="mileage"/>
-            </div>
+                <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">Mileage</button>
+                  </span>
+                    <input type="number" th:field="*{mileage}" class="form-control" id="mileage"/>
+                </div>
+                </div>
 
-            <div class="form-group">
-                <label for="available">Available</label>
-                <input type="checkbox" class="form-control" id="available" th:field="*{available}" th:value="true"/>
 
-            </div>
+                <div class="form-group">
+                <div class="input-group">
+                    <label class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" id="available" th:field="*{available}" th:value="true"/>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">Check if the car is available</span>
+                    </label>
 
-            <div class="form-group">
-                <label class="btn btn-light btn-file">
-                    Add an image <input class="btn btn-light" type="file" name="file" hidden="hidden"/>
-                </label>
-            </div>
-            <button style="margin-top:10px" class="btn btn-shadow btn-success" type="submit">Submit</button>
-            <button style="margin-top:10px" class="btn btn-shadow btn-danger" type="reset">Reset</button>
+                </div>
+                </div>
 
-        </form>
+
+                <div class="form-group">
+                    <label class="btn btn-light btn-file">
+                        Add an image <input class="btn btn-light" type="file" name="file" hidden="hidden"/>
+                    </label>
+                </div>
+                <button style="margin-top:10px" class="btn btn-shadow btn-success" type="submit">Submit</button>
+                <button style="margin-top:10px" class="btn btn-shadow btn-danger" type="reset">Reset</button>
+
+            </form>
+        </div>
     </div>
 </div>
-
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
