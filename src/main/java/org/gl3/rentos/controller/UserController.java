@@ -56,6 +56,7 @@ public class UserController {
         {System.out.println("*********** Valid USER");
 
 
+         session.setAttribute("user",userDB);
          session.setAttribute("sessionRole",userDB.getRole());
 
 
@@ -99,7 +100,7 @@ public class UserController {
     user.setRole("USER");
     if (!(userDB == null))
         { System.out.println("Email already in use");
-         validEmailSignUp="Error.. Email already in use";
+         validEmailSignUp="Error.. Email already exists.";
          model.addAttribute("message",validEmailSignUp);
         return "redirect:signup" ;}
 
