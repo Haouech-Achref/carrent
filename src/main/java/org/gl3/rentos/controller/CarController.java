@@ -43,19 +43,30 @@ public class CarController {
     {
 
         System.out.println(session.getAttribute("sessionRole"));
-        if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("ADMIN"))
-        { List<Car> lister = new ArrayList<>();
-        carRepository.findAll().forEach(lister::add);
-        model.addAttribute("cars",lister);
-        return "cars";}
-        System.out.println("U dont have access to this page ");
+        if (session.getAttribute("sessionRole")== null)
+        {   System.out.println("Role == null");
+            return "accessdenied";
+        }
+
+        else if (session.getAttribute("sessionRole").equals("admin"))
+              { List<Car> lister = new ArrayList<>();
+                 carRepository.findAll().forEach(lister::add);
+                 model.addAttribute("cars",lister);
+                 return "cars"; }
+
+        else if    (!(session.getAttribute("sessionRole").equals("admin")))
+        {   System.out.println("U dont have access to this page ");
+            return "accessdenied";
+        }
+
+
         return "redirect:signin";
     }
 
     @RequestMapping(value = "/add")
     public String addCar(HttpSession session)
     {
-        if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("ADMIN"))
+        if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("admin"))
         {
             return "formCar";
 

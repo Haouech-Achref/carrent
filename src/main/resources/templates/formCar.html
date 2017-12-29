@@ -21,7 +21,7 @@
                   <span class="input-group-btn">
                     <button class="btn btn-light" type="button">Model</button>
                   </span>
-                    <input type="text" th:field="*{model}" class="form-control" id="model"/>
+                    <input type="text" th:field="*{model}" class="form-control" id="model" placeholder="empty"/>
                 </div>
                 </div>
 
@@ -30,7 +30,7 @@
                   <span class="input-group-btn">
                     <button class="btn btn-light" type="button">Color</button>
                   </span>
-                    <input type="text" th:field="*{color}" class="form-control" id="color"/>
+                    <input type="text" th:field="*{color}" class="form-control" id="color" placeholder="empty"/>
                 </div>
                 </div>
 
@@ -39,7 +39,7 @@
                   <span class="input-group-btn">
                     <button class="btn btn-light" type="button">Registration number</button>
                   </span>
-                    <input type="text" th:field="*{registration_number}" class="form-control" id="registration_number"/>
+                    <input type="text" th:field="*{registration_number}" class="form-control" id="registration_number" placeholder="empty"/>
                 </div>
                 </div>
 
@@ -48,7 +48,7 @@
                   <span class="input-group-btn">
                     <button class="btn btn-light" type="button">Horsepower</button>
                   </span>
-                    <input type="number" th:field="*{power}" class="form-control" id="power"/>
+                    <input type="number" th:field="*{power}" class="form-control" id="power" placeholder="empty"/>
                 </div>
                 </div>
 
@@ -57,7 +57,7 @@
                   <span class="input-group-btn">
                     <button class="btn btn-light" type="button">Price per day</button>
                   </span>
-                    <input type="number" th:field="*{price}" class="form-control" id="price"/>
+                    <input type="number" th:field="*{price}" class="form-control" id="price" placeholder="empty"/>
                 </div>
                 </div>
 
@@ -66,7 +66,7 @@
                   <span class="input-group-btn">
                     <button class="btn btn-light" type="button">Manufacturer</button>
                   </span>
-                    <input type="text" th:field="*{manufacturer}" class="form-control" id="manufacturer"/>
+                    <input type="text" th:field="*{manufacturer}" class="form-control" id="manufacturer" placeholder="empty"/>
                 </div>
                 </div>
 
@@ -75,7 +75,7 @@
                   <span class="input-group-btn">
                     <button class="btn btn-light" type="button">Mileage</button>
                   </span>
-                    <input type="number" th:field="*{mileage}" class="form-control" id="mileage"/>
+                    <input type="number" th:field="*{mileage}" class="form-control" id="mileage" placeholder="empty"/>
                 </div>
                 </div>
 
@@ -100,8 +100,8 @@
 
                 </div>
 
-                <button style="margin-top:10px" class="btn btn-shadow btn-success" type="submit">Submit</button>
-                <button style="margin-top:10px" class="btn btn-shadow btn-danger" type="reset">Reset</button>
+                <button style="margin-top:10px" class="btn btn-shadow btn-success" type="submit" id="submit">Submit</button>
+                <button style="margin-top:10px" class="btn btn-shadow btn-danger" type="reset" id="reset">Reset</button>
 
             </form>
         </div>
@@ -117,6 +117,72 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
         integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
         crossorigin="anonymous"></script>
+<script>
 
+
+    var $model = $("#model");
+    var $color  = $("#color");
+    var $registration_number = $("#registration_number");
+    var $power  = $("#power");
+    var $price  = $("#price");
+    var $manufacturer  = $("#manufacturer");
+    var $mileage  = $("#mileage");
+
+    function isModeldValid() {
+        return $model.val().length > 0;
+    }
+
+    function iscolordValid() {
+        return $color.val().length > 0;
+    }
+
+    function isRegistrationValid() {
+        return $registration_number.val().length > 0;
+    }
+
+    function isPowerValid() {
+        return $power.val().length > 0;
+    }
+
+    function isPriceValid() {
+        return $price.val().length > 0;
+    }
+
+    function iscManufacturerValid() {
+        return $manufacturer.val().length > 0;
+    }
+
+    function isMiliegeValid() {
+        return $mileage.val().length > 0;
+    }
+
+    function canSubmit() {
+        return !(!isModeldValid() || !iscolordValid()  || !isRegistrationValid() || !isPowerValid() || !isPriceValid() || !iscManufacturerValid() || !isMiliegeValid()       );
+    }
+
+    function enableSubmitEvent() {
+        $("#submit").prop("disabled", !canSubmit());
+    }
+
+
+    //When event happens on password input
+    $model.keyup(enableSubmitEvent);
+
+    //When event happens on confirmation input
+    $color.keyup(enableSubmitEvent);
+
+    $registration_number.keyup(enableSubmitEvent);
+    $power.keyup(enableSubmitEvent);
+    $price.keyup(enableSubmitEvent);
+    $manufacturer.keyup(enableSubmitEvent);
+    $mileage.keyup(enableSubmitEvent);
+
+
+
+    enableSubmitEvent();
+
+
+
+</script>
 </body>
 </html>
