@@ -1,10 +1,11 @@
 package org.gl3.rentos.controller;
 
-import com.sun.deploy.net.HttpResponse;
 import org.gl3.rentos.model.Car;
+import org.gl3.rentos.model.User;
 import org.gl3.rentos.repository.CarRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
-import javax.validation.constraints.Null;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -24,6 +24,8 @@ import java.util.List;
 @RequestMapping(value = "/cars")
 public class CarController {
 
+    private static final Logger errorLogger = LoggerFactory.getLogger("error");
+    private static final Logger infoLogger = LoggerFactory.getLogger("info");
 
 
     private static String UPLOADED_FOLDER = "src/main/resources/static/img/";
@@ -42,9 +44,10 @@ public class CarController {
     public String listCar(Car car, Model model,HttpSession session)
     {
 
-        System.out.println(session.getAttribute("sessionRole"));
+        User user = (User) session.getAttribute("user");
+
         if (session.getAttribute("sessionRole")== null)
-        {   System.out.println("Role == null");
+        {   infoLogger.info("Access to /cars denied: user not logged in.");
             return "accessdenied";
         }
 
@@ -52,10 +55,14 @@ public class CarController {
               { List<Car> lister = new ArrayList<>();
                  carRepository.findAll().forEach(lister::add);
                  model.addAttribute("cars",lister);
+
+                  infoLogger.info("Access to /cars granted to administrator "+ user.getFname());
                  return "cars"; }
 
         else if    (!(session.getAttribute("sessionRole").equals("admin")))
-        {   System.out.println("U dont have access to this page ");
+        {
+
+            infoLogger.info("Access to /cars denied: User "+ user.getFname()+" is not an administrator.");
             return "accessdenied";
         }
 
@@ -66,13 +73,16 @@ public class CarController {
     @RequestMapping(value = "/add")
     public String addCar(HttpSession session)
     {
+        User user = (User) session.getAttribute("user");
         if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("admin"))
         {
+            infoLogger.info("Access to /cars/add granted to administrator ");
             return "formCar";
 
         }
         else {
 
+            infoLogger.info("Access to /cars denied: User is not an administrator.");
             return "accessdenied";
         }
     }
@@ -81,9 +91,10 @@ public class CarController {
     @RequestMapping(value = "", method = RequestMethod.POST)
     public String saveCar(HttpSession session ,Car tester, @RequestParam("file") MultipartFile file,
                           RedirectAttributes redirectAttributes)
-    {System.out.println(session.getAttribute("sessionRole"));
+    {
 
         if (file.isEmpty()) {
+            errorLogger.warn("No car photo uploaded. Using default picture instead.");
             tester.setPicture("alt.png");
             carRepository.save(tester);
             return "redirect:cars";
@@ -99,24 +110,43 @@ public class CarController {
 
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "'");
+            infoLogger.info("Sucessfully uploaded car photo.");
 
         } catch (IOException e) {
-            e.printStackTrace();
+            errorLogger.error(e.getMessage());
+            errorLogger.info("Using default picture instead.");
             tester.setPicture("alt.png");
             carRepository.save(tester);
             return "redirect:cars";
         }
 
         carRepository.save(tester);
+        infoLogger.info("Car #"+ tester.getCar_id()+" added to the database.");
         return "redirect:cars";
     }
 
     @RequestMapping(value = "/{id}")
     public String editCarInfo(@PathVariable int id, Model model,HttpSession session)
     {   System.out.println(session.getAttribute("sessionRole"));
-        Car car = carRepository.findOne(id);
-        model.addAttribute("car",car);
-        return "formCar";   }
+
+
+        User user = (User) session.getAttribute("user");
+        if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("admin"))
+        {
+            infoLogger.info("Access to /cars/" + id + " granted to administrator ");
+            Car car = carRepository.findOne(id);
+            model.addAttribute("car",car);
+            return "formCar";
+
+        }
+        else {
+
+            infoLogger.info("Access to /cars/" + id + " denied: User is not an administrator.");
+            return "accessdenied";
+        }
+
+    }
+
 
 
 
