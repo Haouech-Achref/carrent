@@ -47,7 +47,6 @@ public class RentController {
     @RequestMapping(value = "/availablecars", method = RequestMethod.POST)
     public String searchAvailable(Rent rent, Model model, HttpSession session)
     {
-
         ArrayList<Rent> unavailableDates = rentRepository.findAllByPickupBetweenOrDropoffBetween(rent.getPickup(),rent.getDropoff(),rent.getPickup(),rent.getDropoff());
         unavailableDates.forEach(car -> System.out.println(car.getCar().getRegistration_number()));
         ArrayList<Car> unavailableCars = new ArrayList<>();
