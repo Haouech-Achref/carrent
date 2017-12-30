@@ -23,7 +23,7 @@
                   <span class="input-group-btn">
                     <button class="btn btn-light" type="button">Pickup date</button>
                   </span>
-                        <input type="date" th:field="*{pickup}" class="form-control" id="pickup"/>
+                        <input type="date" th:field="*{pickup}" class="form-control" id="pickup" />
                     </div>
                 </div>
 
@@ -32,11 +32,11 @@
                   <span class="input-group-btn">
                     <button class="btn btn-light" type="button">Dropoff date</button>
                   </span>
-                        <input type="date" th:field="*{dropoff}" class="form-control" id="drop"/>
+                        <input type="date" th:field="*{dropoff}" class="form-control" id="drop" />
                     </div>
                 </div>
 
-                <button style="margin-top:10px" class="btn btn-shadow btn-success" type="submit">Submit</button>
+                <button style="margin-top:10px" class="btn btn-shadow btn-success" type="submit" id="submit">Submit</button>
                 <button style="margin-top:10px" class="btn btn-shadow btn-danger" type="reset">Reset</button>
 
             </form>
@@ -54,5 +54,69 @@
         </div>
     </div>
 </div>
+<script>
+    var $pickup = $("#pickup");
+    var $drop = $("#drop");
+    var yearpick ;
+    var yeardrop ;
+    var monthpick ;
+    var monthdrop ;
+    var daydrop ;
+    var daypick ;
+
+
+
+   function isDateValid() {
+       yearpick = parseInt($pickup.val().split('-')[0],10);
+       yeardrop = parseInt($drop.val().split('-')[0],10);
+
+       monthpick = parseInt($pickup.val().split('-')[1],10);
+       monthdrop = parseInt($drop.val().split('-')[1],10);
+
+       daypick = parseInt($pickup.val().split('-')[2],10);
+       daydrop = parseInt($drop.val().split('-')[2],10);
+
+       if (yearpick > yeardrop)
+           return false ;
+       else if (monthpick > monthdrop )
+           return false ;
+       else if ( daypick > daydrop)
+           return false ;
+
+       return true
+    }
+
+    function ispickValid() {
+        return $pickup.val().length > 0;
+    }
+
+    function isdropValid() {
+        return $drop.val().length > 0;
+    }
+
+
+
+  function canSubmit() {
+        return !(!isDateValid() || !ispickValid() || !isdropValid());
+    }
+
+    function enableSubmitEvent() {
+        $("#submit").prop("disabled", !canSubmit());
+    }
+
+
+
+
+
+    $pickup.change(enableSubmitEvent);
+    $drop.change(enableSubmitEvent);
+
+
+    enableSubmitEvent();
+
+
+
+
+</script>
 </body>
 </html>
