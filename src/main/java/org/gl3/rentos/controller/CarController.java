@@ -40,6 +40,28 @@ public class CarController {
     }
 
 
+    @RequestMapping(value = "delete/{id}")
+    public String deleteCar(@PathVariable int id, Model model, HttpSession session)
+    {
+        if (session.getAttribute("sessionRole")== null)
+        {   infoLogger.info("Access to /cars denied: user not logged in.");
+            return "accessdenied";
+        }
+        else if (session.getAttribute("sessionRole").equals("admin")){
+        infoLogger.info("Car "+ id + " deleted");
+        carRepository.delete(id);
+        return "redirect:/cars";}
+
+        else if    (!(session.getAttribute("sessionRole").equals("admin")))
+        {
+
+            infoLogger.info("Access to /cars denied: User "+ " is not an administrator.");
+            return "accessdenied";
+        }
+        return "redirect:signin";
+    }
+
+
     @RequestMapping(value = "")
     public String listCar(Car car, Model model,HttpSession session)
     {

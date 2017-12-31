@@ -113,3 +113,12 @@ java.lang.NullPointerException: null
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+2017-12-31 13:50:52 [http-nio-8080-exec-7] WARN  error - No car photo uploaded. Using default picture instead.
+2017-12-31 13:54:17 [http-nio-8080-exec-5] WARN  error - No car photo uploaded. Using default picture instead.
+2017-12-31 13:56:31 [http-nio-8080-exec-3] WARN  error - No car photo uploaded. Using default picture instead.
+2017-12-31 14:04:41 [http-nio-8080-exec-6] WARN  error - No car photo uploaded. Using default picture instead.
+2017-12-31 14:06:33 [http-nio-8080-exec-9] WARN  error - No car photo uploaded. Using default picture instead.
+2017-12-31 14:07:29 [http-nio-8080-exec-8] WARN  error - No car photo uploaded. Using default picture instead.
+2017-12-31 14:18:07 [http-nio-8080-exec-5] WARN  error - No car photo uploaded. Using default picture instead.
+2017-12-31 14:18:26 [http-nio-8080-exec-5] WARN  error - No car photo uploaded. Using default picture instead.
+2017-12-31 14:23:56 [http-nio-8080-exec-7] WARN  error - No car photo uploaded. Using default picture instead.

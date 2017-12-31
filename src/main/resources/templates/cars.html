@@ -1,48 +1,56 @@
-<!DOCTYPE HTML>
-
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Cars</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+
+    <title>Rentos</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-neon-glow.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-neon-glow.min.css}"/>
+    <style>
+        img
+        {
+            width: 350px;
+        }
+    </style>
 </head>
+
 <body>
+<div class="container">
 
-<table class="table">
-    <thead class="thead-dark">
-    <tr>
-        <th>Model</th>
-        <th>Color</th>
-        <th>Registration number</th>
-        <th>Power</th>
-        <th>Price</th>
-        <th>Manufacturer</th>
-        <th>Mileage</th>
-        <th>Available</th>
+    <a th:href="@{/cars/add}" class="btn btn-shadow btn-success push-right" th:text="Add"/>
+    <div th:each="car: ${cars}"  class="card">
+        <div class="card-body">
+            <div class="media">
+                <img class=" rounded d-flex align-self-start mr-1" th:src="@{|/img/${car.getPicture()}|}"
+                     alt="Generic placeholder image"/>
+                <div class="media-body" style="margin: 20px">
+                    <ul>
+                        <li th:text="|Manufacturer: ${car.getManufacturer()}|"/>
+                        <li th:text="|Model: ${car.getModel()}|"/>
+                        <li th:text="|Color: ${car.getColor()}|"/>
+                        <li th:text="|Power: ${car.getPower()} brake horsepower|"/>
+                        <li th:text="|Mileage: ${car.getMileage()} Km|"/>
+                        <li th:text="|Registration Number: ${car.getRegistration_number()} |"/>
+                        <li th:text="|Price: ${car.getPrice()} TND/day|"/>
+                    </ul>
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="car: ${cars}">
-        <th scope="row" th:text="${car.getModel()}"></th>
-        <td th:text="${car.getColor()}"></td>
-        <td th:text="${car.getRegistration_number()}"></td>
-        <td th:text="${car.getPower()}"></td>
-        <td th:text="${car.getPrice()}"></td>
-        <td th:text="${car.getManufacturer()}"></td>
-        <td th:text="${car.getMileage()}"></td>
-        <td th:text="${car.isAvailable()}"></td>
+                    <a th:href="@{|/cars/delete/${car.getCar_id()}|}" class="btn btn-shadow btn-danger push-right" th:text="Delete"/>
+                    <a th:href="@{|/cars/${car.getCar_id()}|}" class="btn btn-shadow btn-warning push-right" th:text="Modify"/>
 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-
-
-
-    </tr>
-    </tbody>
-</table>
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
 </body>
 </html>

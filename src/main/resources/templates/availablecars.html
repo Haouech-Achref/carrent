@@ -29,7 +29,9 @@
                         <li th:text="|Model: ${car.getModel()}|"/>
                         <li th:text="|Color: ${car.getColor()}|"/>
                         <li th:text="|Power: ${car.getPower()} brake horsepower|"/>
-                        <li th:text="|Power: ${car.getPrice()} TND/day|"/>
+                        <li th:text="|Mileage: ${car.getMileage()} Km|"/>
+
+                        <li th:text="|Price: ${car.getPrice()} TND/day|"/>
                     </ul>
 
                     <a th:href="@{|/rent/${car.getCar_id()}|}" class="btn btn-shadow btn-success push-right" th:text="Rent"/>
