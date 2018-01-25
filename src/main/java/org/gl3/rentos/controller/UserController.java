@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -35,6 +37,75 @@ public class UserController {
         return new User();
 
     }
+    @RequestMapping(value = "/users")
+    public String listCar(User user, Model model,HttpSession session)
+    {
+
+        User userSession = (User) session.getAttribute("user");
+
+        if (session.getAttribute("sessionRole")== null)
+        {   infoLogger.info("Access to /users denied: user not logged in.");
+            return "accessdenied";
+        }
+
+        else if (session.getAttribute("sessionRole").equals("admin"))
+        { List<User> lister = new ArrayList<>();
+            userRepository.findAll().forEach(lister::add);
+            model.addAttribute("users",lister);
+
+            infoLogger.info("Access to /users granted to administrator "+ userSession.getFname());
+            return "users"; }
+
+        else if    (!(session.getAttribute("sessionRole").equals("admin")))
+        {
+
+            infoLogger.info("Access to /users denied: User "+ userSession.getFname()+" is not an administrator.");
+            return "accessdenied";
+        }
+
+
+        return "redirect:signin";
+    }
+
+    @RequestMapping(value = "users/add")
+    public String addCar(HttpSession session)
+    {
+        User userSession = (User) session.getAttribute("user");
+        if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("admin"))
+        {
+            infoLogger.info("Access to /user/add granted to administrator ");
+            return "formSignUp";
+
+        }
+        else {
+
+            infoLogger.info("Access to /users/add denied: User is not an administrator.");
+            return "accessdenied";
+        }
+    }
+
+    @RequestMapping(value = "/users/delete/{id}")
+    public String deleteCar(@PathVariable int id, Model model, HttpSession session)
+    {
+        if (session.getAttribute("sessionRole")== null)
+        {   infoLogger.info("Access to /user/delete denied: user not logged in.");
+            return "accessdenied";
+        }
+        else if (session.getAttribute("sessionRole").equals("admin")){
+            infoLogger.info("User "+ id + " deleted");
+            userRepository.delete(id);
+            return "redirect:/users";}
+
+        else if    (!(session.getAttribute("sessionRole").equals("admin")))
+        {
+
+            infoLogger.info("Access to /user/delete denied: User "+ " is not an administrator.");
+            return "accessdenied";
+        }
+        return "redirect:signin";
+    }
+
+
 
     @RequestMapping("/signin")
     public String signin(Model model, HttpSession session) {
@@ -43,6 +114,7 @@ public class UserController {
         model.addAttribute("message", validEmailSignIn);
         return "signin";
     }
+
 
 
     @RequestMapping(value = "/signin", method = RequestMethod.POST)
@@ -76,6 +148,8 @@ public class UserController {
 
 
     }
+
+
 
 
     @RequestMapping("/users/{id}")

@@ -122,3 +122,7 @@ java.lang.NullPointerException: null
 2017-12-31 14:18:07 [http-nio-8080-exec-5] WARN  error - No car photo uploaded. Using default picture instead.
 2017-12-31 14:18:26 [http-nio-8080-exec-5] WARN  error - No car photo uploaded. Using default picture instead.
 2017-12-31 14:23:56 [http-nio-8080-exec-7] WARN  error - No car photo uploaded. Using default picture instead.
+2018-01-24 10:15:35 [http-nio-8080-exec-3] WARN  error - No car photo uploaded. Using default picture instead.
+2018-01-24 10:15:49 [http-nio-8080-exec-3] WARN  error - No car photo uploaded. Using default picture instead.
+2018-01-24 20:45:25 [http-nio-8080-exec-3] ERROR error - User attempted to sign in with invalid password.
+2018-01-24 20:45:42 [http-nio-8080-exec-6] ERROR error - User attempted to sign in with invalid email.

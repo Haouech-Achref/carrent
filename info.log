@@ -55,3 +55,36 @@
 2017-12-31 14:23:45 [http-nio-8080-exec-10] INFO  info - Access to /cars/add granted to administrator 
 2017-12-31 14:23:56 [http-nio-8080-exec-7] INFO  info - Access to /cars granted to administrator achref
 2017-12-31 14:25:18 [http-nio-8080-exec-5] INFO  info - Access to /cars denied: user not logged in.
+2018-01-24 10:10:42 [http-nio-8080-exec-4] INFO  info - Access to /cars denied: User is not an administrator.
+2018-01-24 10:10:54 [http-nio-8080-exec-8] INFO  info - Access to /cars denied: User is not an administrator.
+2018-01-24 10:13:58 [http-nio-8080-exec-3] INFO  info - Access to /cars denied: user not logged in.
+2018-01-24 10:14:51 [http-nio-8080-exec-4] INFO  info - User achref signed in.
+2018-01-24 10:15:04 [http-nio-8080-exec-9] INFO  info - Access to /cars granted to administrator achref
+2018-01-24 10:15:11 [http-nio-8080-exec-4] INFO  info - Access to /cars/add granted to administrator 
+2018-01-24 10:15:35 [http-nio-8080-exec-3] INFO  info - Access to /cars granted to administrator achref
+2018-01-24 10:15:41 [http-nio-8080-exec-7] INFO  info - Access to /cars/3070 granted to administrator 
+2018-01-24 10:15:49 [http-nio-8080-exec-3] INFO  info - Access to /cars granted to administrator achref
+2018-01-24 10:51:54 [http-nio-8080-exec-1] INFO  info - Access to /users/10 denied: User is not an administrator.
+2018-01-24 10:52:05 [http-nio-8080-exec-3] INFO  info - User achref signed in.
+2018-01-24 10:52:10 [http-nio-8080-exec-6] INFO  info - Access to /users/10 granted.
+2018-01-24 20:34:41 [http-nio-8080-exec-4] INFO  info - User achref signed in.
+2018-01-24 20:36:04 [http-nio-8080-exec-5] INFO  info - User achref signed in.
+2018-01-24 20:36:11 [http-nio-8080-exec-1] INFO  info - Access to /users granted to administrator achref
+2018-01-24 20:46:02 [http-nio-8080-exec-3] INFO  info - User achref signed in.
+2018-01-24 20:46:11 [http-nio-8080-exec-6] INFO  info - Access to /users granted to administrator achref
+2018-01-24 20:46:14 [http-nio-8080-exec-9] INFO  info - Access to /user/add granted to administrator 
+2018-01-24 20:47:40 [http-nio-8080-exec-1] INFO  info - Access to /users granted to administrator achref
+2018-01-24 20:47:50 [http-nio-8080-exec-7] INFO  info - User 1020 deleted
+2018-01-24 20:47:50 [http-nio-8080-exec-8] INFO  info - Access to /users granted to administrator achref
+2018-01-24 20:48:01 [http-nio-8080-exec-3] INFO  info - Access to /users/10 granted.
+2018-01-24 20:50:54 [http-nio-8080-exec-4] INFO  info - Access to /users granted to administrator achref
+2018-01-24 20:50:57 [http-nio-8080-exec-2] INFO  info - Access to /users/20 granted.
+2018-01-24 20:51:25 [http-nio-8080-exec-5] INFO  info - Access to /users granted to administrator achref
+2018-01-24 20:51:27 [http-nio-8080-exec-2] INFO  info - Access to /user/add granted to administrator 
+2018-01-24 21:00:23 [http-nio-8080-exec-9] INFO  info - User achref signed in.
+2018-01-24 21:00:29 [http-nio-8080-exec-5] INFO  info - Access to /cars granted to administrator achref
+2018-01-24 21:00:33 [http-nio-8080-exec-9] INFO  info - Access to /cars/add granted to administrator 
+2018-01-24 21:00:37 [http-nio-8080-exec-4] INFO  info - Access to /cars/3070 granted to administrator 
+2018-01-24 21:00:49 [http-nio-8080-exec-7] INFO  info - Access to /users granted to administrator achref
+2018-01-24 21:01:10 [http-nio-8080-exec-6] INFO  info - Access to /user/add granted to administrator 
+2018-01-24 21:08:06 [http-nio-8080-exec-1] INFO  info - Access to /users denied: user not logged in.

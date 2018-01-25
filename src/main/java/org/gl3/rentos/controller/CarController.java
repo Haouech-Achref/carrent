@@ -44,7 +44,7 @@ public class CarController {
     public String deleteCar(@PathVariable int id, Model model, HttpSession session)
     {
         if (session.getAttribute("sessionRole")== null)
-        {   infoLogger.info("Access to /cars denied: user not logged in.");
+        {   infoLogger.info("Access to /cars/delete denied: user not logged in.");
             return "accessdenied";
         }
         else if (session.getAttribute("sessionRole").equals("admin")){
@@ -55,7 +55,7 @@ public class CarController {
         else if    (!(session.getAttribute("sessionRole").equals("admin")))
         {
 
-            infoLogger.info("Access to /cars denied: User "+ " is not an administrator.");
+            infoLogger.info("Access to /cars/delete denied: User "+ " is not an administrator.");
             return "accessdenied";
         }
         return "redirect:signin";
@@ -104,7 +104,7 @@ public class CarController {
         }
         else {
 
-            infoLogger.info("Access to /cars denied: User is not an administrator.");
+            infoLogger.info("Access to /cars/add denied: User is not an administrator.");
             return "accessdenied";
         }
     }
@@ -149,7 +149,7 @@ public class CarController {
 
     @RequestMapping(value = "/{id}")
     public String editCarInfo(@PathVariable int id, Model model,HttpSession session)
-    {   System.out.println(session.getAttribute("sessionRole"));
+    {
 
 
         User user = (User) session.getAttribute("user");
