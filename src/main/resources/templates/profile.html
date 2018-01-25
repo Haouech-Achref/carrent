@@ -1,16 +1,156 @@
-<!DOCTYPE HTML>
-
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Getting Started: Serving Web Content</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-neon-glow.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap4-neon-glow.min.css}"/>
+
 </head>
 <body>
 
+<div class="container">
+    <div class="card" style="padding: 25px; margin: 25px">
+
+        <div class="card-body">
+            <form action="#" enctype="multipart/form-data" th:action="@{/users}" th:object="${user}" method="post">
+
+                <input type="text" th:field="*{user_id}" class="form-control" th:hidden="true"/>
+                <div class="form-group">
+                    <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">First Name</button>
+                  </span>
+                        <input type="text" th:field="*{fname}" class="form-control" id="fname" placeholder="empty"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">Last Name</button>
+                  </span>
+                        <input type="text" th:field="*{lname}" class="form-control" id="color" placeholder="empty"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">Email</button>
+                  </span>
+                        <input type="text" th:field="*{email}" class="form-control" id="email" placeholder="empty"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">Telephone</button>
+                  </span>
+                        <input type="text" th:field="*{telephone}" class="form-control" id="telephone" placeholder="empty"/>
+                    </div>
+                </div>
+
+                <input type="text" th:field="*{role}" class="form-control" th:hidden="true"/>
+
+                <div class="form-group">
+                    <div class="input-group">
+                  <span class="input-group-btn">
+                    <button class="btn btn-light" type="button">Password</button>
+                  </span>
+                        <input type="text" th:field="*{password}" class="form-control" id="password" placeholder="empty"/>
+                    </div>
+                </div>
 
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+
+
+
+                <button style="margin-top:10px" class="btn btn-shadow btn-success" type="submit" id="submit">Submit</button>
+                <button style="margin-top:10px" class="btn btn-shadow btn-danger" type="reset" id="reset">Reset</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+<script>
+
+
+    var $model = $("#model");
+    var $color  = $("#color");
+    var $registration_number = $("#registration_number");
+    var $power  = $("#power");
+    var $price  = $("#price");
+    var $manufacturer  = $("#manufacturer");
+    var $mileage  = $("#mileage");
+
+    function isModeldValid() {
+        return $model.val().length > 0;
+    }
+
+    function iscolordValid() {
+        return $color.val().length > 0;
+    }
+
+    function isRegistrationValid() {
+        return $registration_number.val().length > 0;
+    }
+
+    function isPowerValid() {
+        return $power.val().length > 0;
+    }
+
+    function isPriceValid() {
+        return $price.val().length > 0;
+    }
+
+    function iscManufacturerValid() {
+        return $manufacturer.val().length > 0;
+    }
+
+    function isMiliegeValid() {
+        return $mileage.val().length > 0;
+    }
+
+    function canSubmit() {
+        return !(!isModeldValid() || !iscolordValid()  || !isRegistrationValid() || !isPowerValid() || !isPriceValid() || !iscManufacturerValid() || !isMiliegeValid()       );
+    }
+
+    function enableSubmitEvent() {
+        $("#submit").prop("disabled", !canSubmit());
+    }
+
+
+    //When event happens on password input
+    $model.keyup(enableSubmitEvent);
+
+    //When event happens on confirmation input
+    $color.keyup(enableSubmitEvent);
+
+    $registration_number.keyup(enableSubmitEvent);
+    $power.keyup(enableSubmitEvent);
+    $price.keyup(enableSubmitEvent);
+    $manufacturer.keyup(enableSubmitEvent);
+    $mileage.keyup(enableSubmitEvent);
+
+
+
+    enableSubmitEvent();
+
+
+
+</script>
 </body>
 </html>

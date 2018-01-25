@@ -12,9 +12,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -152,20 +158,37 @@ public class UserController {
 
 
 
-    @RequestMapping("/users/{id}")
-    public String editUser(@PathVariable int id, Model model, HttpSession session) {
+    @RequestMapping("/profile")
+    public String editUser( Model model, HttpSession session) {
 
 
         User user = (User) session.getAttribute("user");
-        if (session.getAttribute("sessionRole") != null && (session.getAttribute("sessionRole").equals("admin") || user.getUser_id() == id)) {
-            infoLogger.info("Access to /users/" + id + " granted.");
-            User userDB = userRepository.findOne(id);
+        if (session.getAttribute("sessionRole") != null ) {
+            infoLogger.info("Access to /profile granted.");
+            User userDB = userRepository.findOne(user.getUser_id());
             model.addAttribute("user", userDB);
-            return "formSignUp";
+            return "profile";
+
 
         } else {
 
-            infoLogger.info("Access to /users/" + id + " denied: User is not an administrator.");
+            infoLogger.info("Access to /profile denied: User is not signed in.");
+            return "accessdeniedprofile";
+        }
+    }
+
+    @RequestMapping(value = "users", method = RequestMethod.POST)
+    public String saveCar(HttpSession session ,User tester,
+                          RedirectAttributes redirectAttributes)
+    {
+
+        if (session.getAttribute("sessionRole") != null ) {
+            userRepository.save(tester);
+            infoLogger.info("User #"+ tester.getUser_id()+" updated to the database.");
+            return "redirect:profile";}
+        else {
+
+            infoLogger.info("Access to /profile denied: User is not signed in.");
             return "accessdenied";
         }
     }
