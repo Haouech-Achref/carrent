@@ -1689,3 +1689,288 @@ org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as express
 2018-01-24 21:00:09 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
 2018-01-24 21:00:09 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
 2018-01-24 21:00:23 [http-nio-8080-exec-9] INFO  o.h.h.i.QueryTranslatorFactoryInitiator - HHH000397: Using ASTQueryTranslatorFactory
+2018-01-25 09:39:20 [restartedMain] INFO  org.gl3.rentos.RentosApplication - Starting RentosApplication on Haouech-Laptop with PID 6608 (Z:\Career\Projects\rentos\carrent\target\classes started by haoue in Z:\Career\Projects\rentos\carrent)
+2018-01-25 09:39:20 [restartedMain] INFO  org.gl3.rentos.RentosApplication - No active profile set, falling back to default profiles: default
+2018-01-25 09:39:21 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@37bec1fe: startup date [Thu Jan 25 09:39:21 GMT+01:00 2018]; root of context hierarchy
+2018-01-25 09:39:24 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2018-01-25 09:39:24 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2018-01-25 09:39:24 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-01-25 09:39:25 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-01-25 09:39:25 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4106 ms
+2018-01-25 09:39:25 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-01-25 09:39:25 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-01-25 09:39:25 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-01-25 09:39:25 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-01-25 09:39:25 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-01-25 09:39:27 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-01-25 09:39:27 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-01-25 09:39:27 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-01-25 09:39:27 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-01-25 09:39:27 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-01-25 09:39:28 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-01-25 09:39:28 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
+2018-01-25 09:39:28 [restartedMain] WARN  org.hibernate.dialect.DerbyDialect - HHH000430: The DerbyDialect dialect has been deprecated; use one of the version-specific dialects instead
+2018-01-25 09:39:29 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 09:39:29 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 09:39:29 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 09:39:30 [restartedMain] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2018-01-25 09:39:31 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@37bec1fe: startup date [Thu Jan 25 09:39:21 GMT+01:00 2018]; root of context hierarchy
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/{id}]}" onto public java.lang.String org.gl3.rentos.controller.CarController.editCarInfo(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars]}" onto public java.lang.String org.gl3.rentos.controller.CarController.listCar(org.gl3.rentos.model.Car,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/add]}" onto public java.lang.String org.gl3.rentos.controller.CarController.addCar(javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/delete/{id}]}" onto public java.lang.String org.gl3.rentos.controller.CarController.deleteCar(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.CarController.saveCar(javax.servlet.http.HttpSession,org.gl3.rentos.model.Car,org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/]}" onto public java.lang.String org.gl3.rentos.controller.MainController.home()
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rent/{id}],methods=[GET]}" onto public java.lang.String org.gl3.rentos.controller.RentController.rent(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/availablecars],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.RentController.searchAvailable(org.gl3.rentos.model.Rent,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signup],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.UserController.addUser(org.gl3.rentos.model.User,org.springframework.ui.Model)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signin]}" onto public java.lang.String org.gl3.rentos.controller.UserController.signin(org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}]}" onto public java.lang.String org.gl3.rentos.controller.UserController.editUser(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signup]}" onto public java.lang.String org.gl3.rentos.controller.UserController.signUp(org.springframework.ui.Model)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signin],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.UserController.validSignIn(org.gl3.rentos.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users]}" onto public java.lang.String org.gl3.rentos.controller.UserController.listCar(org.gl3.rentos.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/add]}" onto public java.lang.String org.gl3.rentos.controller.UserController.addCar(javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/delete/{id}]}" onto public java.lang.String org.gl3.rentos.controller.UserController.deleteCar(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 09:39:32 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 09:39:33 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-01-25 09:39:33 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-01-25 09:39:33 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2018-01-25 09:39:33 [restartedMain] INFO  org.gl3.rentos.RentosApplication - Started RentosApplication in 14.139 seconds (JVM running for 17.779)
+2018-01-25 09:53:58 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-01-25 09:53:58 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-01-25 09:53:58 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 154 ms
+2018-01-25 09:55:02 [restartedMain] INFO  org.gl3.rentos.RentosApplication - Starting RentosApplication on Haouech-Laptop with PID 3332 (Z:\Career\Projects\rentos\carrent\target\classes started by haoue in Z:\Career\Projects\rentos\carrent)
+2018-01-25 09:55:02 [restartedMain] INFO  org.gl3.rentos.RentosApplication - No active profile set, falling back to default profiles: default
+2018-01-25 09:55:02 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@56f700dc: startup date [Thu Jan 25 09:55:02 GMT+01:00 2018]; root of context hierarchy
+2018-01-25 09:55:03 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2018-01-25 09:55:03 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2018-01-25 09:55:03 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-01-25 09:55:03 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-01-25 09:55:03 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1473 ms
+2018-01-25 09:55:03 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-01-25 09:55:03 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-01-25 09:55:03 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-01-25 09:55:03 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-01-25 09:55:03 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-01-25 09:55:04 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-01-25 09:55:04 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-01-25 09:55:04 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-01-25 09:55:04 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-01-25 09:55:04 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-01-25 09:55:04 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-01-25 09:55:04 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
+2018-01-25 09:55:04 [restartedMain] WARN  org.hibernate.dialect.DerbyDialect - HHH000430: The DerbyDialect dialect has been deprecated; use one of the version-specific dialects instead
+2018-01-25 09:55:04 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 09:55:04 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 09:55:04 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 09:55:04 [restartedMain] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2018-01-25 09:55:04 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@56f700dc: startup date [Thu Jan 25 09:55:02 GMT+01:00 2018]; root of context hierarchy
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/add]}" onto public java.lang.String org.gl3.rentos.controller.CarController.addCar(javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars]}" onto public java.lang.String org.gl3.rentos.controller.CarController.listCar(org.gl3.rentos.model.Car,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.CarController.saveCar(javax.servlet.http.HttpSession,org.gl3.rentos.model.Car,org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/delete/{id}]}" onto public java.lang.String org.gl3.rentos.controller.CarController.deleteCar(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/{id}]}" onto public java.lang.String org.gl3.rentos.controller.CarController.editCarInfo(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/]}" onto public java.lang.String org.gl3.rentos.controller.MainController.home()
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/availablecars],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.RentController.searchAvailable(org.gl3.rentos.model.Rent,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rent/{id}],methods=[GET]}" onto public java.lang.String org.gl3.rentos.controller.RentController.rent(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signup]}" onto public java.lang.String org.gl3.rentos.controller.UserController.signUp(org.springframework.ui.Model)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signin],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.UserController.validSignIn(org.gl3.rentos.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}]}" onto public java.lang.String org.gl3.rentos.controller.UserController.editUser(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signup],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.UserController.addUser(org.gl3.rentos.model.User,org.springframework.ui.Model)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/add]}" onto public java.lang.String org.gl3.rentos.controller.UserController.addCar(javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users]}" onto public java.lang.String org.gl3.rentos.controller.UserController.listCar(org.gl3.rentos.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/delete/{id}]}" onto public java.lang.String org.gl3.rentos.controller.UserController.deleteCar(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signin]}" onto public java.lang.String org.gl3.rentos.controller.UserController.signin(org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 09:55:05 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 09:55:06 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-01-25 09:55:06 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-01-25 09:55:06 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2018-01-25 09:55:06 [restartedMain] INFO  org.gl3.rentos.RentosApplication - Started RentosApplication in 4.301 seconds (JVM running for 5.524)
+2018-01-25 09:55:17 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-01-25 09:55:17 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-01-25 09:55:17 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+2018-01-25 10:30:49 [restartedMain] INFO  org.gl3.rentos.RentosApplication - Starting RentosApplication on Haouech-Laptop with PID 12928 (Z:\Career\Projects\rentos\carrent\target\classes started by haoue in Z:\Career\Projects\rentos\carrent)
+2018-01-25 10:30:49 [restartedMain] INFO  org.gl3.rentos.RentosApplication - No active profile set, falling back to default profiles: default
+2018-01-25 10:30:49 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75b28ddb: startup date [Thu Jan 25 10:30:49 GMT+01:00 2018]; root of context hierarchy
+2018-01-25 10:30:52 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2018-01-25 10:30:52 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2018-01-25 10:30:52 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-01-25 10:30:52 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-01-25 10:30:52 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2904 ms
+2018-01-25 10:30:53 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-01-25 10:30:53 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-01-25 10:30:53 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-01-25 10:30:53 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-01-25 10:30:53 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-01-25 10:30:54 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-01-25 10:30:54 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-01-25 10:30:54 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-01-25 10:30:54 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-01-25 10:30:54 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-01-25 10:30:54 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-01-25 10:30:54 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
+2018-01-25 10:30:54 [restartedMain] WARN  org.hibernate.dialect.DerbyDialect - HHH000430: The DerbyDialect dialect has been deprecated; use one of the version-specific dialects instead
+2018-01-25 10:30:56 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 10:30:56 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 10:30:56 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 10:30:56 [restartedMain] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2018-01-25 10:30:57 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-01-25 10:30:57 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@75b28ddb: startup date [Thu Jan 25 10:30:49 GMT+01:00 2018]; root of context hierarchy
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars]}" onto public java.lang.String org.gl3.rentos.controller.CarController.listCar(org.gl3.rentos.model.Car,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.CarController.saveCar(javax.servlet.http.HttpSession,org.gl3.rentos.model.Car,org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/delete/{id}]}" onto public java.lang.String org.gl3.rentos.controller.CarController.deleteCar(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/add]}" onto public java.lang.String org.gl3.rentos.controller.CarController.addCar(javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/{id}]}" onto public java.lang.String org.gl3.rentos.controller.CarController.editCarInfo(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/]}" onto public java.lang.String org.gl3.rentos.controller.MainController.home(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rent/{id}],methods=[GET]}" onto public java.lang.String org.gl3.rentos.controller.RentController.rent(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/availablecars],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.RentController.searchAvailable(org.gl3.rentos.model.Rent,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signup],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.UserController.addUser(org.gl3.rentos.model.User,org.springframework.ui.Model)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users]}" onto public java.lang.String org.gl3.rentos.controller.UserController.listCar(org.gl3.rentos.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/delete/{id}]}" onto public java.lang.String org.gl3.rentos.controller.UserController.deleteCar(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/add]}" onto public java.lang.String org.gl3.rentos.controller.UserController.addCar(javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signin],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.UserController.validSignIn(org.gl3.rentos.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}]}" onto public java.lang.String org.gl3.rentos.controller.UserController.editUser(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signin]}" onto public java.lang.String org.gl3.rentos.controller.UserController.signin(org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signup]}" onto public java.lang.String org.gl3.rentos.controller.UserController.signUp(org.springframework.ui.Model)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-01-25 10:30:58 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2018-01-25 10:30:58 [restartedMain] INFO  org.gl3.rentos.RentosApplication - Started RentosApplication in 10.592 seconds (JVM running for 17.226)
+2018-01-25 10:35:09 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-01-25 10:35:09 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-01-25 10:35:09 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+2018-01-25 10:35:45 [restartedMain] INFO  org.gl3.rentos.RentosApplication - Starting RentosApplication on Haouech-Laptop with PID 5820 (Z:\Career\Projects\rentos\carrent\target\classes started by haoue in Z:\Career\Projects\rentos\carrent)
+2018-01-25 10:35:45 [restartedMain] INFO  org.gl3.rentos.RentosApplication - No active profile set, falling back to default profiles: default
+2018-01-25 10:35:45 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@64ee2da2: startup date [Thu Jan 25 10:35:45 GMT+01:00 2018]; root of context hierarchy
+2018-01-25 10:35:47 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2018-01-25 10:35:47 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2018-01-25 10:35:47 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-01-25 10:35:47 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-01-25 10:35:47 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1688 ms
+2018-01-25 10:35:47 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-01-25 10:35:47 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-01-25 10:35:47 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-01-25 10:35:47 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-01-25 10:35:47 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-01-25 10:35:47 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-01-25 10:35:47 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-01-25 10:35:48 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-01-25 10:35:48 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-01-25 10:35:48 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-01-25 10:35:48 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-01-25 10:35:48 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
+2018-01-25 10:35:48 [restartedMain] WARN  org.hibernate.dialect.DerbyDialect - HHH000430: The DerbyDialect dialect has been deprecated; use one of the version-specific dialects instead
+2018-01-25 10:35:48 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 10:35:48 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 10:35:48 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 10:35:48 [restartedMain] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2018-01-25 10:35:48 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@64ee2da2: startup date [Thu Jan 25 10:35:45 GMT+01:00 2018]; root of context hierarchy
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars]}" onto public java.lang.String org.gl3.rentos.controller.CarController.listCar(org.gl3.rentos.model.Car,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/delete/{id}]}" onto public java.lang.String org.gl3.rentos.controller.CarController.deleteCar(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/add]}" onto public java.lang.String org.gl3.rentos.controller.CarController.addCar(javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.CarController.saveCar(javax.servlet.http.HttpSession,org.gl3.rentos.model.Car,org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/{id}]}" onto public java.lang.String org.gl3.rentos.controller.CarController.editCarInfo(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/]}" onto public java.lang.String org.gl3.rentos.controller.MainController.home(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rent/{id}],methods=[GET]}" onto public java.lang.String org.gl3.rentos.controller.RentController.rent(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/availablecars],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.RentController.searchAvailable(org.gl3.rentos.model.Rent,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signup],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.UserController.addUser(org.gl3.rentos.model.User,org.springframework.ui.Model)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users]}" onto public java.lang.String org.gl3.rentos.controller.UserController.listCar(org.gl3.rentos.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/delete/{id}]}" onto public java.lang.String org.gl3.rentos.controller.UserController.deleteCar(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/add]}" onto public java.lang.String org.gl3.rentos.controller.UserController.addCar(javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signup]}" onto public java.lang.String org.gl3.rentos.controller.UserController.signUp(org.springframework.ui.Model)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signin]}" onto public java.lang.String org.gl3.rentos.controller.UserController.signin(org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signin],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.UserController.validSignIn(org.gl3.rentos.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}]}" onto public java.lang.String org.gl3.rentos.controller.UserController.editUser(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-01-25 10:35:49 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2018-01-25 10:35:49 [restartedMain] INFO  org.gl3.rentos.RentosApplication - Started RentosApplication in 4.549 seconds (JVM running for 5.894)
+2018-01-25 10:35:53 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-01-25 10:35:53 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-01-25 10:35:53 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 0 ms
+2018-01-25 10:37:33 [restartedMain] INFO  org.gl3.rentos.RentosApplication - Starting RentosApplication on Haouech-Laptop with PID 6948 (Z:\Career\Projects\rentos\carrent\target\classes started by haoue in Z:\Career\Projects\rentos\carrent)
+2018-01-25 10:37:33 [restartedMain] INFO  org.gl3.rentos.RentosApplication - No active profile set, falling back to default profiles: default
+2018-01-25 10:37:34 [restartedMain] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@681a92fb: startup date [Thu Jan 25 10:37:34 GMT+01:00 2018]; root of context hierarchy
+2018-01-25 10:37:35 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2018-01-25 10:37:35 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2018-01-25 10:37:35 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-01-25 10:37:35 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-01-25 10:37:35 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1588 ms
+2018-01-25 10:37:35 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-01-25 10:37:35 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-01-25 10:37:35 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-01-25 10:37:35 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-01-25 10:37:35 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-01-25 10:37:36 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-01-25 10:37:36 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-01-25 10:37:36 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate Core {5.0.12.Final}
+2018-01-25 10:37:36 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000206: hibernate.properties not found
+2018-01-25 10:37:36 [restartedMain] INFO  org.hibernate.cfg.Environment - HHH000021: Bytecode provider name : javassist
+2018-01-25 10:37:36 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-01-25 10:37:36 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
+2018-01-25 10:37:36 [restartedMain] WARN  org.hibernate.dialect.DerbyDialect - HHH000430: The DerbyDialect dialect has been deprecated; use one of the version-specific dialects instead
+2018-01-25 10:37:36 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 10:37:36 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 10:37:36 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000014: Found use of deprecated [org.hibernate.id.SequenceHiLoGenerator] sequence-based id generator; use org.hibernate.id.enhanced.SequenceStyleGenerator instead.  See Hibernate Domain Model Mapping Guide for details.
+2018-01-25 10:37:36 [restartedMain] INFO  o.h.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@681a92fb: startup date [Thu Jan 25 10:37:34 GMT+01:00 2018]; root of context hierarchy
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/add]}" onto public java.lang.String org.gl3.rentos.controller.CarController.addCar(javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars]}" onto public java.lang.String org.gl3.rentos.controller.CarController.listCar(org.gl3.rentos.model.Car,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/delete/{id}]}" onto public java.lang.String org.gl3.rentos.controller.CarController.deleteCar(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.CarController.saveCar(javax.servlet.http.HttpSession,org.gl3.rentos.model.Car,org.springframework.web.multipart.MultipartFile,org.springframework.web.servlet.mvc.support.RedirectAttributes)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/cars/{id}]}" onto public java.lang.String org.gl3.rentos.controller.CarController.editCarInfo(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/]}" onto public java.lang.String org.gl3.rentos.controller.MainController.home(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/availablecars],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.RentController.searchAvailable(org.gl3.rentos.model.Rent,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/rent/{id}],methods=[GET]}" onto public java.lang.String org.gl3.rentos.controller.RentController.rent(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signup],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.UserController.addUser(org.gl3.rentos.model.User,org.springframework.ui.Model)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/add]}" onto public java.lang.String org.gl3.rentos.controller.UserController.addCar(javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users]}" onto public java.lang.String org.gl3.rentos.controller.UserController.listCar(org.gl3.rentos.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/delete/{id}]}" onto public java.lang.String org.gl3.rentos.controller.UserController.deleteCar(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signin]}" onto public java.lang.String org.gl3.rentos.controller.UserController.signin(org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signin],methods=[POST]}" onto public java.lang.String org.gl3.rentos.controller.UserController.validSignIn(org.gl3.rentos.model.User,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/signup]}" onto public java.lang.String org.gl3.rentos.controller.UserController.signUp(org.springframework.ui.Model)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/users/{id}]}" onto public java.lang.String org.gl3.rentos.controller.UserController.editUser(int,org.springframework.ui.Model,javax.servlet.http.HttpSession)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 10:37:37 [restartedMain] INFO  o.s.w.s.h.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-01-25 10:37:38 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2018-01-25 10:37:38 [restartedMain] INFO  o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-01-25 10:37:38 [restartedMain] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2018-01-25 10:37:38 [restartedMain] INFO  org.gl3.rentos.RentosApplication - Started RentosApplication in 4.608 seconds (JVM running for 5.535)
+2018-01-25 10:37:45 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-01-25 10:37:45 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-01-25 10:37:45 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms

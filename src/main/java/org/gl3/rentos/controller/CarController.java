@@ -43,6 +43,10 @@ public class CarController {
     @RequestMapping(value = "delete/{id}")
     public String deleteCar(@PathVariable int id, Model model, HttpSession session)
     {
+        User user =(User) session.getAttribute("user");
+        boolean signedIn = user != null;
+        model.addAttribute("signedIn", signedIn);
+
         if (session.getAttribute("sessionRole")== null)
         {   infoLogger.info("Access to /cars/delete denied: user not logged in.");
             return "accessdenied";
@@ -67,6 +71,8 @@ public class CarController {
     {
 
         User user = (User) session.getAttribute("user");
+        boolean signedIn = user != null;
+        model.addAttribute("signedIn", signedIn);
 
         if (session.getAttribute("sessionRole")== null)
         {   infoLogger.info("Access to /cars denied: user not logged in.");
@@ -93,9 +99,11 @@ public class CarController {
     }
 
     @RequestMapping(value = "/add")
-    public String addCar(HttpSession session)
+    public String addCar(HttpSession session, Model model)
     {
         User user = (User) session.getAttribute("user");
+        boolean signedIn = user != null;
+        model.addAttribute("signedIn", signedIn);
         if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("admin"))
         {
             infoLogger.info("Access to /cars/add granted to administrator ");
@@ -112,8 +120,12 @@ public class CarController {
 
     @RequestMapping(value = "", method = RequestMethod.POST)
     public String saveCar(HttpSession session ,Car tester, @RequestParam("file") MultipartFile file,
-                          RedirectAttributes redirectAttributes)
+                          Model model)
     {
+
+        User user =(User) session.getAttribute("user");
+        boolean signedIn = user != null;
+        model.addAttribute("signedIn", signedIn);
 
         if (file.isEmpty()) {
             errorLogger.warn("No car photo uploaded. Using default picture instead.");
@@ -129,9 +141,6 @@ public class CarController {
             Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
             Files.write(path, bytes);
             tester.setPicture(file.getOriginalFilename());
-
-            redirectAttributes.addFlashAttribute("message",
-                    "You successfully uploaded '" + file.getOriginalFilename() + "'");
             infoLogger.info("Sucessfully uploaded car photo.");
 
         } catch (IOException e) {
@@ -152,7 +161,10 @@ public class CarController {
     {
 
 
-        User user = (User) session.getAttribute("user");
+        User user =(User) session.getAttribute("user");
+        boolean signedIn = user != null;
+        model.addAttribute("signedIn", signedIn);
+
         if ( session.getAttribute("sessionRole")!= null && session.getAttribute("sessionRole").equals("admin"))
         {
             infoLogger.info("Access to /cars/" + id + " granted to administrator ");

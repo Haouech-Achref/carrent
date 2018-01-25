@@ -38,6 +38,8 @@ public class RentController {
     public String rent(@PathVariable int id, Model model, HttpSession session)
     {
         User user =(User) session.getAttribute("user");
+        boolean signedIn = user != null;
+        model.addAttribute("signedIn", signedIn);
         if (user == null) {
             errorLogger.error("Cannot complete rent operation: user not signed in.");
             return "redirect:/signin";
@@ -56,6 +58,9 @@ public class RentController {
     @RequestMapping(value = "/availablecars", method = RequestMethod.POST)
     public String searchAvailable(Rent rent, Model model, HttpSession session)
     {
+        User user =(User) session.getAttribute("user");
+        boolean signedIn = user != null;
+        model.addAttribute("signedIn", signedIn);
         ArrayList<Rent> unavailableDates = rentRepository.findAllByPickupBetweenOrDropoffBetween(rent.getPickup(),rent.getDropoff(),rent.getPickup(),rent.getDropoff());
         unavailableDates.forEach(car -> System.out.println(car.getCar().getRegistration_number()));
         ArrayList<Car> unavailableCars = new ArrayList<>();

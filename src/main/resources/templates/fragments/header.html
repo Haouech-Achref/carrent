@@ -9,6 +9,21 @@
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+
+            <div th:switch="${signedIn}">
+                <a th:if="true" class="nav-link" href="/signin">Sign out</a>
+                <a th:if="false" class="nav-link" href="/signin">Sign in</a>
+            </div>
+        </li>
+    </ul>
 </div>
 
 
