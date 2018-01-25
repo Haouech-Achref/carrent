@@ -15,6 +15,11 @@
 </head>
 
 <body>
+
+<div class="row d-flex justify-content-center">
+    <div th:replace="fragments/header :: header"/>
+</div>
+
 <div class="container">
 
     <a th:href="@{/cars/add}" class="btn btn-shadow btn-success push-right" th:text="Add"/>

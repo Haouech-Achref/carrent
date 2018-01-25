@@ -9,6 +9,10 @@
 </head>
 <body>
 
+<div class="row d-flex justify-content-center">
+    <div th:replace="fragments/header :: header"/>
+</div>
+
 <div class="container">
     <div class="card" style="padding: 25px; margin: 25px">
         <img class="card-img-top" th:src="@{|/img/${car.picture}|}"/>
