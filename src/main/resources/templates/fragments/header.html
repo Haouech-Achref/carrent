@@ -14,7 +14,10 @@
             <a class="nav-link active" href="/">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/profile">Profile</a>
+            <div th:switch="${signedIn}">
+                <a th:case="True" class="nav-link" href="/profile">Profile</a>
+                <a th:case="false" class="nav-link" href="/signup">Sign up</a>
+            </div>
         </li>
         <li class="nav-item">
 
